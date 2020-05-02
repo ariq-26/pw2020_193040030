@@ -1,47 +1,38 @@
 <?php
-// mengecek apakah ada id yang dikirimkan
-// jika tidak maka akan dikembalikan kehalaman index.php
-if (!isset($_GET['id'])) {
-    header("location: ../index.php");
-    exit;
-}
 
-require 'functions.php';
+    // mengecek apakah id yang dikirim
+    // jika tidak maka akan dikembalaikan ke halaman index.php
+    if (!isset($_GET['id'])) {
+        header("location: ../index.php");
+        exit;
+    }
 
-// mengambil id dari url
-$id = $_GET['id'];
+    require 'functions.php';
 
-// melakukan query dengan parameter id yang diambil dari url
-$apparel = query("SELECT * FROM apparel WHERE id = $id")[0];
+    //mengambil id dr url
+    $id = $_GET['id'];
+
+    //melakukan query dengan parameter id yang diambil dari url
+    $data_baju = query("SELECT * FROM data_baju WHERE id = $id")[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Produk</title>
+    <title>Data Baju</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <a href="../index.php"><button>Kembali ke INDEX</button></a>
     <div class="container">
-        <div class="bg_display">
-            <img src="../assets/img/<?= $apparel['display']; ?>" alt="">
+        <div class="gambar">
+            <img src="../assets/img/<?= $data_baju["img"]; ?>">
         </div>
         <div class="keterangan">
-            <p class="merk"><?= $apparel['merk']; ?></p>
-            <p class="nama_artikel"><?= $apparel['nama_artikel']; ?></p>
-            <p class="harga"><?= $apparel['harga']; ?></p>
-            <p class="stok"><?= $apparel['stok']; ?> pcs</p>
-            <div class="bg_size_guide">
-                <img src="../assets/img/<?= $apparel['size_guide']; ?>" alt="">
-            </div>
+            <p><?= $data_baju["merek"]; ?></p>
+            <p><?= $data_baju["ukuran"]; ?></p>
         </div>
 
-        <button class="tombol-kembali"><a href="../index.php">Kembali</a></button>
+        <button class="tombol-kembali"><a href="../index.php">Back</a></button>
     </div>
 </body>
-
 </html>

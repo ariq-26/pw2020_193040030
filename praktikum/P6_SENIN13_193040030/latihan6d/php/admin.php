@@ -2,8 +2,8 @@
 // menghubungkan dengan file php lainnya
 require 'functions.php';
 
-// melalukan query
-$apparel = query("SELECT * FROM apparel");
+// melakukan query
+$data_baju = query("SELECT * FROM data_baju");
 
 ?>
 <!DOCTYPE html>
@@ -14,48 +14,41 @@ $apparel = query("SELECT * FROM apparel");
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Admin page</title>
+  <title>Admin</title>
 </head>
 
 <body>
-  <a href="../index.php"><button>Kembali ke INDEX</button></a>
   <div class="add">
-    <a href="tambah.php" class="tambah">Tambah Data</a>
+    <a href="tambah.php">Tambah Data</a>
   </div>
-  <table border="1" cellspacing="0" cellpadding="5">
-    <tr class="thead">
-      <th colspan="8">
-        <h1>Gudang Entraight.co Store</h1>
-      </th>
-    </tr>
-    <tr class="title_table">
-      <th>NO</th>
-      <th>OPSI</th>
-      <th>DISPLAY</th>
-      <th>MERK</th>
-      <th>NAMA ARTIKEL</th>
-      <th>SIZE GUIDE</th>
-      <th>HARGA</th>
-      <th>STOK</th>
-    </tr>
-    <?php $i = 1 ?>
-    <?php foreach ($apparel as $a) : ?>
-      <tr>
-        <td class="no"><?= $i ?></td>
-        <td class="opsi">
-          <a class="ubah" href="ubah.php?id=<?= $a['id'] ?>"><button>Ubah</button></a>
-          <a href=" hapus.php?id=<?= $a['id'] ?>" onclick="return confirm('Hapus Data??')" class="hapus"><button>Hapus</button></a>
-        </td>
-        <td class="display"><img src="../assets/img/<?= $a['display']; ?>"></td>
-        <td class="merk"><?= $a["merk"] ?></td>
-        <td class="nama_artikel"><?= $a["nama_artikel"] ?></td>
-        <td class="size_guide"><img src="../assets/img/<?= $a['size_guide']; ?>"></td>
-        <td class="harga"><b>Rp. <?= $a["harga"] ?></b></td>
-        <td class="stok"><b><?= $a["stok"] ?></b></td>
+  <a href="../index.php"><button>Kembali ke INDEX</button></a>
+    <table border="1" cellpadding="13" cellspacing="2">
+      <tr class="thead">
+        <th colspan="8">
+          <h1>Data Baju</h1>
+        </th>
       </tr>
-      <?php $i++ ?>
-    <?php endforeach; ?>
-  </table>
+      <tr class="title_table">
+        <th>No</th>
+        <th>Opsi</th>
+        <th>Gambar</th>
+        <th>Merek</th>
+        <th>Ukuran</th>
+      </tr>
+      <?php $i = 1 ?>
+      <?php foreach ($data_baju as $b) : ?>
+        <tr>
+          <td class="no"><?= $i ?></td>
+          <td class="opsi">
+            <a href="ubah.php?id=<?= $b['id'] ?>" class="ubah"><button>Ubah</button></a>
+            <a href="hapus.php?id=<? $b['id'] ?>" onclick="return confirm('Hapus Data?')" class="hapus"><button>Hapus</button></a>
+          </td>
+          <td class="foto"><img src="../assets/img/<?= $b['img']; ?>"></td>
+          <td class="merek"><?= $b["merek"]; ?></td>
+          <td class="ukuran"><?= $b["ukuran"]; ?></td>
+        </tr>
+        <?php $i++; ?>
+      <?php endforeach; ?>
+    </table>
 </body>
-
 </html>

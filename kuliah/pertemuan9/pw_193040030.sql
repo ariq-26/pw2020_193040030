@@ -30,28 +30,28 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `mahasiswa` (
   `id` int(11) NOT NULL,
-  `nama` varchar(100) DEFAULT NULL,
+  `img` varchar(100) DEFAULT NULL,
   `nrp` char(9) DEFAULT NULL,
+  `nama` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `jurusan` varchar(100) DEFAULT NULL,
-  `gambar` varchar(100) DEFAULT NULL
+  `jurusan` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`id`, `nama`, `nrp`, `email`, `jurusan`, `gambar`) VALUES
-(1, 'Sofyan Egi Lesmana', '193040025', '193040025.sofyan@mail.unpas.ac.id', 'Teknik Informatika', 'egi.jpg'),
-(2, 'Annisa Dian Fatwa', '193060017', '193060017.mail.unpas.ac.id', 'Perencanaan Wilayah dan Kota', 'annisad.jpg'),
-(3, 'M. Hafidz Fadillah', '193030017', '193030017@mail.unpas.ac.id', 'Teknik Mesin', 'hafidz.jpg'),
-(4, 'David Dalil', '193040002', '193040002@mail.unpas.ac.id', 'Teknik Informatika', 'david.jpg'),
-(5, 'Renal Muttaqin', '193040037', '193040037@mail.unpas.ac.id', 'Teknik Informatika', 'renal.jpg'),
-(6, 'Aryogi Aziz', '193040023', '193040023@mail.unpas.ac.id', 'Teknik Informatika', 'aryogi.jpg'),
-(7, 'Elvina Raynisha', '193060014', '193060014@mail.unpas.ac.id', 'Perencanaan Wilayah dan Kota', 'elvina.jpg'),
-(8, 'Yusril Ismail Azi', '193040024', '1903040024@mail.unpas.ac.id', 'Teknik Informatika', 'azi.jpg'),
-(9, 'Fahri Arliansyah', '193040011', '193040011@mai;unpas.ac.id', 'Teknik Informatika', 'fahri.jpg'),
-(10, 'Silvi Fitriawati', '193040028', '193040028@mail.unpas.ac.id', 'Teknik Informatika', 'silvi.jpg');
+INSERT INTO `mahasiswa` (`id`, `img`, `nrp`, `nama`, `email`, `jurusan`) VALUES 
+('1', 'ariq.jpg', '193040030', 'Antasfariq F', '193040030.antasafariq@mail.unpas.ac.id', 'Teknik Informatika'),
+('2', 'alwi.jpg', '193040029', 'Alwi Ramadhan', '193040029.alwi@mail.unpas.ac.id', 'Teknik Informatika'),
+('3', 'agung.jpg', '193040008', 'Agung Gumelar', '193040008.agung@mail.unpas.ac.id', 'Teknik Informatika'),
+('4', 'david.jpg', '193040002', 'David Dalil', '193040002.david@mail.unpas.ac.id', 'Teknik Informatika'), 
+('5', 'renal.jpg', '193040037', 'Renal Muttaqin', '193040037.renal@mail.unpas.ac.id', 'Teknik Informatika'),
+('6', 'aryogi.jpg', '193040023', 'Aryogi Aziz', '193040023.aryogi@mail.unpas.ac.id', 'Teknik Informatika'),
+('7', 'reza.jpg', '193040005', 'Reza Dwiyana', '193040005.reza@mail.unpas.ac.id', 'Teknik Informatika'),
+('8', 'aji.jpg', '193040024', 'Yusril Ismail Azi', '1903040024.yusril@mail.unpas.ac.id', 'Teknik Informatika'),
+('9', 'fahri.jpg', '193040011', 'Fahri Arliansyah', '193040011.fahri@mai;unpas.ac.id', 'Teknik Informatika'),
+('10', 'silvi.jpg', '193040028', 'Silvi Fitriawati', '193040028.silvi@mail.unpas.ac.id', 'Teknik Informatika');
 
 --
 -- Indexes for dumped tables

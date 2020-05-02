@@ -13,3 +13,4 @@ if (hapus($id) > 0) {
     document.location.href='admin.php';
   </script>";
 }
+?>

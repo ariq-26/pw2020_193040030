@@ -1,81 +1,69 @@
 <?php
-// function untuk melakukan koneksi ke database
-function koneksi()
-{
-    $conn = mysqli_connect("localhost", "root", "") or die("Koneksi ke DB gagal");
-    mysqli_select_db($conn, "tubes_193040030") or die("Database salah!");
-    return $conn;
-}
-
-
-// function untuk melakukan query ke database
-function query($sql)
-{
-    $conn = koneksi();
-    $result = mysqli_query($conn, "$sql");
-
-    $rows = [];
-    while ($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row;
+    // function untuk melakukan koneksi ke database
+    function koneksi(){
+        $conn = mysqli_connect("localhost", "root", "") or die("Koneksi ke DB gagal");
+        mysqli_select_db($conn, "pw_193040030") or die("Database salah!");
+        
+        return $conn;
     }
 
-    return $rows;
-}
-function tambah($data)
-{
-    $conn = koneksi();
+    // function untuk melakukan query ke database
+    function query($sql){
+        $conn = koneksi();
+        $result = mysqli_query($conn, "$sql");
 
-    $display = htmlspecialchars($data['display']);
-    $merk = htmlspecialchars($data['merk']);
-    $nama_artikel = htmlspecialchars($data['nama_artikel']);
-    $size_guide = htmlspecialchars($data['size_guide']);
-    $harga = htmlspecialchars($data['harga']);
-    $stok = htmlspecialchars($data['stok']);
-    $query = "INSERT INTO 
-             apparel 
-             VALUES
-    ('' , '$display', '$merk', '$nama_artikel', '$size_guide', '$harga', '$stok')";
-    mysqli_query($conn, $query);
+        $rows = [];
+        while ($row = mysqli_fetch_assoc($result)){
+            $rows[] = $row;
+        }
 
-    return mysqli_affected_rows($conn);
-}
+        return $rows;
+    }
 
-function hapus($id)
-{
-    $conn = koneksi();
-    mysqli_query($conn, "DELETE FROM apparel WHERE id = $id");
+    // fungsi untuk menambahkan data didalam database
+    function tambah($data)
+    {
+        $conn = koneksi();
 
-    return mysqli_affected_rows($conn);
-}
+        $img = htmlspecialchars($data['img']);
+        $merek = htmlspecialchars($data['merek']);
+        $ukuran = htmlspecialchars($data['ukuran']);
 
+        $query = "INSERT INTO data_baju
+                        VALUES
+                        (``, `$merek`, `$img`, `$ukuran`)";
+            
+        mysqli_query($conn, $query);
 
-function ubah($data)
-{
-    $conn = koneksi();
-    $id = htmlspecialchars($data['id']);
-    $display = htmlspecialchars($data['display']);
-    $merk = htmlspecialchars($data['merk']);
-    $nama_artikel = htmlspecialchars($data['nama_artikel']);
-    $size_guide = htmlspecialchars($data['size_guide']);
-    $harga = htmlspecialchars($data['harga']);
-    $stok = htmlspecialchars($data['stok']);
+        return mysqli_affected_rows($conn);
+    }
 
-    $query = "UPDATE apparel SET
-            display = '$display',
-            merk = '$merk',
-            nama_artikel = '$nama_artikel',
-            size_guide = '$size_guide',
-            harga = '$harga',
-            stok = '$stok'
-            WHERE id = '$id'
-            ";
-    mysqli_query($conn, $query);
+    function hapus($id)
+    {
+        $conn = koneksi();
+        mysqli_query($conn, "DELETE FROM data_baju WHERE id = $id");
 
-    return mysqli_affected_rows($conn);
-}
+        return mysqli_affected_rows($conn);
+    }
 
-// function cari($keyword)
-// {
-//     $
-//     return query($query);
-// }
+    function ubah($data)
+    {
+        $conn = koneksi();
+        $id = htmlspecialchars($data['id']);
+        $img = htmlspecialchars($data['img']);
+        $merek = htmlspecialchars($data['merek']);
+        $ukuran = htmlspecialchars($data['ukuran']);
+
+        $query = "UPDATE data_baju
+                SET
+                img = '$img',
+                merek = '$merek',
+                ukuran = '$ukuran',
+                WHERE id = '$id'
+                ";
+
+        mysqli_query($conn, $query);
+
+        return mysqli_affected_rows($conn);
+    }
+?>

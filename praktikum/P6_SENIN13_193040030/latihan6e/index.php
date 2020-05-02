@@ -1,19 +1,9 @@
 <?php
-// menghubungkan dengan file php lainnya
-require 'php/functions.php';
-// melakukan querry
-$apparel = query("SELECT * FROM apparel");
+   // menghubungkan dengan file php lainnya
+   require 'php/functions.php';
 
-if (isset($_POST['cari'])) {
-    $keyword = $_POST['keyword'];
-    $apparel = query(
-        "SELECT * FROM apparel WHERE
-          nama_artikel LIKE '%$keyword%' "
-    );
-} else {
-    $apparel = query("SELECT * FROM apparel");
-}
-
+   // melakukan query
+   $data_baju = query("SELECT * FROM data_baju")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,25 +12,25 @@ if (isset($_POST['cari'])) {
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
         body {
-            min-height: 500px;
+            min-height: 650px;
         }
 
         .container {
             width: 40%;
             margin: 100px auto 150px;
-            background-color: #dfe8e7;
+            background-color: white;
             text-align: center;
         }
 
         h1 {
-            background-color: #8cffee;
+            background-color: orangered;
             margin: 0 auto;
             border-bottom: 2px solid red;
         }
 
         .container p a {
-            background-color: #ffe08c;
-            color: red;
+            background-color: white;
+            color: blue;
             font-size: 25px;
             text-decoration: none;
             padding: auto;
@@ -50,35 +40,25 @@ if (isset($_POST['cari'])) {
         .container p a:hover {
             color: black;
             font-size: 26px;
-            background-color: white;
+            background-color: lightgrey;
         }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan 5c</title>
+    <title>Latihan 6b</title>
 </head>
 
 <body>
     <a href="php/admin.php"><button>Admin</button></a>
-    <form action="" method="POST">
-        <input type="text" name="keyword" size="30" autofocus placeholder="Masukan keyword yang anda cari" autocomplete="off">
-        <button type="submit" name="cari">Cari!</button>
-    </form>
     <div class="container">
-        <h1>Entraight Store.co</h1>
-
-        <?php if (empty($apparel)) : ?>
-            <h1>Data tidak ditemukan</h1>
-        <?php else : ?>
-            <?php foreach ($apparel as $a) : ?>
-                <p>
-                    <a href="php/detail.php?id=<?= $a['id'] ?>">
-                        <?= $a['nama_artikel'] ?>
-                    </a>
-                </p>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </div>
+        <h1>Data Baju</h1>
+        <?php foreach ($data_baju as $b) : ?>
+            <p>
+                <a href="php/detail.php?id=<?= $b['id'] ?>">
+                    <?= $b['merek'] ?>
+                </a>
+            </p>
+         <?php endforeach; ?>
+    </div>                                            
 </body>
-
 </html>

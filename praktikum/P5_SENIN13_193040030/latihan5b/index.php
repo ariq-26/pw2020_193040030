@@ -1,46 +1,36 @@
 <?php
-    // menghubungkan dengan file php lainnya
-    require 'php/functions.php';
+   // menghubungkan dengan file php lainnya
+   require 'php/functions.php';
 
-    // melakukan querry
-    $apparel = query("SELECT * FROM apparel")
+   // melakukan query
+   $data_baju = query("SELECT * FROM data_baju")
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css">    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan 5b</title>
+    <title>Data Baju</title>
 </head>
 <body>
-    <table border="1" cellspacing="0" cellpadding="5" width="90%">
-            <tr bgcolor="#88f7f2">
-            <td><button><a href="index.php" style="text-decoration:none;">BACK</a></button></td>
-                <th colspan="6" ><h1>Entraight.co Store</h1></th>
+    <div class="container">
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                 <th>NO</th>
+                 <th>DISPLAY</th>
+                 <th>MEREK</th>
+                 <th>SIZE</th>
             </tr>
-       <tr class="title_table">
-            <th>NO</th>
-            <th>DISPLAY</th>
-            <th>MERK</th>
-            <th>NAMA ARTIKEL</th>
-            <th>SIZE GUIDE</th>
-            <th>HARGA</th>
-            <th>STOK</th>
-       </tr>
-       <?php $i=1?>
-       <?php foreach ($apparel as $a) : ?>
-       <tr>
-            <td class="no"><?= $i ?></td>
-            <td class="display"><img src="assets/img/<?= $a['display']; ?>"></td>
-            <td class="merk"><?= $a["merk"]?></td>
-            <td class="nama_artikel"><?= $a["nama_artikel"]?></td>
-            <td class="size_guide"><img src="assets/img/<?= $a['size_guide']; ?>"></td>
-            <td class="harga"><b><?= $a["harga"]?></b></td>
-            <td class="stok"><b><?= $a["stok"]?></b></td>
-        </tr>
-        <?php $i++ ?>
-       <?php endforeach; ?>
-    </table>                                              
+            <?php $i=1?>
+            <?php foreach ($data_baju as $baju) : ?>
+                <tr>
+                    <td><?= $i ?></td>
+                    <td><img src="assets/img/<?= $baju["img"]; ?>"></td>
+                    <td><?= $baju["merek"]?></td>
+                    <td><?= $baju["ukuran"]?></td>
+                </tr>
+            <?php $i++ ?>
+            <?php endforeach; ?>
+         </table>
+    </div>                                            
 </body>
 </html>

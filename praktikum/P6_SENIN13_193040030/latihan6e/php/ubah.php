@@ -2,7 +2,7 @@
 require 'functions.php';
 
 $id = $_GET['id'];
-$apparel = query("SELECT * FROM apparel WHERE id = $id")[0];
+$data_baju = query("SELECT * FROM data_baju WHERE id = $id")[0];
 
 if (isset($_POST['ubah'])) {
   if (ubah($_POST) > 0) {
@@ -25,7 +25,7 @@ if (isset($_POST['ubah'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ubah Data Entraigh.co Store</title>
+  <title>Ubah Data Baju</title>
 </head>
 
 <body>
@@ -33,73 +33,38 @@ if (isset($_POST['ubah'])) {
     <form action="" method="post">
 
       <th colspan="3">
-        <h3>Ubah Gudang Entraight.co Store</h3>
+        <h3>Ubah Data Baju Anda</h3>
       </th>
-      <input type="hidden" name="id" id="id" reuquired value="<?= $apparel['id']; ?>">
+
+          <input type="hidden" name="id" id="id" value="<?= $b['id']; ?>">
       <tr>
         <td>
-          <label for="display">Display</label>
+          <label for="img">Foto</label>
         </td>
         <td>
-          :
         </td>
         <td>
-          <input type="text" name="display" id="display" required value="<?= $apparel['display']; ?>">
+          <input type="text" name="img" id="img" required value="<?= $data_baju['img']; ?>">
         </td>
       </tr>
       <tr>
         <td>
-          <label for="merk">Merk</label>
+          <label for="merek">Merek</label>
         </td>
         <td>
-          :
         </td>
         <td>
-          <input type="text" name="merk" id="merk" required value="<?= $apparel['merk']; ?>">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="nama_artikel">Nama Artikel</label>
-        </td>
-        <td>
-          :
-        </td>
-        <td>
-          <input type="text" name="nama_artikel" id="nama_artikel" required value="<?= $apparel['nama_artikel']; ?>">
+          <input type="text" name="merek" id="merek" required value="<?= $data_baju['merek']; ?>">
         </td>
       </tr>
       <tr>
         <td>
-          <label for="size_guide">Size Guide</label>
+          <label for="ukuran">Size</label>
         </td>
         <td>
-          :
         </td>
         <td>
-          <input type="text" name="size_guide" id="size_guide" required value="<?= $apparel['size_guide']; ?>">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="harga">Harga</label>
-        </td>
-        <td>
-          :
-        </td>
-        <td>
-          <input type="number" name="harga" id="harga" required value="<?= $apparel['harga']; ?>">
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label for="stok">Stok</label>
-        </td>
-        <td>
-          :
-        </td>
-        <td>
-          <input type="number" name="stok" id="stok" required value="<?= $apparel['stok']; ?>">
+          <input type="text" name="ukuran" id="ukuran" required value="<?= $data_baju['ukuran']; ?>">
         </td>
       </tr>
       <tr>

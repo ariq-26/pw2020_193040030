@@ -29,30 +29,27 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `apparel` (
-  `id` int(11) NOT NULL,
-  `display` varchar(30) NOT NULL,
-  `merk` varchar(50) NOT NULL,
-  `nama_artikel` varchar(50) NOT NULL,
-  `size_guide` varchar(30) NOT NULL,
-  `harga` varchar(20) NOT NULL,
-  `stok` int(11) NOT NULL
+  `id` int(50) NOT NULL,
+  `merek` varchar(50) NOT NULL,
+  `img` varchar(100) NOT NULL,
+  `ukuran` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `apparel`
 --
 
-INSERT INTO `apparel` (`id`, `display`, `merk`, `nama_artikel`, `size_guide`, `harga`, `stok`) VALUES
-(1, 'img1.png', 'Reclays', 'SAVE THE HUMAN – BLACK', 'sg1.jpg', 'Rp. 135.000,00', 11),
-(2, 'img2.png', 'Rsch', 'SDT 86 SOFT GRAY', 'sg2.jpg', 'Rp. 210.000,00', 21),
-(3, 'img3.png', 'Billionaires Project', 'EXPERIMENT 8.0 - SNEAKER TALES', 'sg3.jfif', 'Rp. 375.000,00', 9),
-(4, 'img4.png', 'United Hart', 'EARTH', 'sg4.jpg', 'Rp. 449.000,00', 22),
-(5, 'img5.png', 'Tenue de Attire', 'HOME LIBRE', 'sg5.jpg', 'Rp. 449.000,00', 12),
-(6, 'img6.png', 'Kamengski Stuff', 'KASUR SHIRT', 'sg6.jpg', 'Rp. 280.000,00', 17),
-(7, 'img7.png', 'Pot Meets Pop', 'PIPES WASHED BLUE', 'sg7.jpg', 'Rp. 560.000,00', 30),
-(8, 'img8.png', 'Old Blue Co', '18 OZ OVER-SLUB SELVEDGE ATLANTIC', 'sg8.jpg', 'Rp. 1.850.000,00', 15),
-(9, 'img9.png', 'Reclays', 'TORNESS CHINOS – GREY', 'sg9.jpg', 'Rp. 295.000,00', 11),
-(10, 'img10.png', 'Moskav', 'ROVER GREEN CARGO PANT', 'sg10.jpg', 'Rp. 255.000,00', 13);
+INSERT INTO `data_baju` (`id`, `merek`, `img`, `ukuran`) VALUES 
+('1', 'ADIDAS', 'adidas.jpg', 'XS/S/M/L/XL'), 
+('2', 'BERSKA', 'berska.jpg', 'XS/S/M/L/XL'), 
+('3', 'BOSS', 'boss.jpg', 'XS/S/M/L/Xl'), 
+('4', 'H&M', 'h&m.jpg', 'XS/S/M/L/XL/XXL'), 
+('5', 'NIKE', 'nike.jpg', 'S/M/L/XL'), 
+('6', 'PULL & BEAR', 'pull&bear.jpg', 'XS/S/M/L/XL'), 
+('7', 'STRADIFARIUS', 'stradi.jpg', 'S/M/L/XL'),
+('8', 'UNIQLO', 'uniqlo.jpg', 'S/M/L/XL'),
+('9', 'VANS', 'vans.jpg', 'S/M/L/XL'),
+('10', 'ZARA', 'zara.jpg', 'XS/S/M/L/XL/XXL');
 
 --
 -- Indexes for dumped tables

@@ -1,9 +1,9 @@
 <?php
-// menghubungkan dengan file php lainnya
-require 'php/functions.php';
+   // menghubungkan dengan file php lainnya
+   require 'php/functions.php';
 
-// melakukan querry
-$apparel = query("SELECT * FROM apparel")
+   // melakukan query
+   $data_baju = query("SELECT * FROM data_baju")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,25 +12,25 @@ $apparel = query("SELECT * FROM apparel")
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
         body {
-            min-height: 500px;
+            min-height: 650px;
         }
 
         .container {
             width: 40%;
             margin: 100px auto 150px;
-            background-color: #dfe8e7;
+            background-color: white;
             text-align: center;
         }
 
         h1 {
-            background-color: #8cffee;
+            background-color: orangered;
             margin: 0 auto;
             border-bottom: 2px solid red;
         }
 
         .container p a {
-            background-color: #ffe08c;
-            color: red;
+            background-color: white;
+            color: blue;
             font-size: 25px;
             text-decoration: none;
             padding: auto;
@@ -40,7 +40,7 @@ $apparel = query("SELECT * FROM apparel")
         .container p a:hover {
             color: black;
             font-size: 26px;
-            background-color: white;
+            background-color: lightgrey;
         }
     </style>
     <meta charset="UTF-8">
@@ -50,18 +50,15 @@ $apparel = query("SELECT * FROM apparel")
 
 <body>
     <a href="php/admin.php"><button>Admin</button></a>
-
     <div class="container">
-        <h1>Entraight Store.co</h1>
-        <?php foreach ($apparel as $a) : ?>
+        <h1>Data Baju</h1>
+        <?php foreach ($data_baju as $b) : ?>
             <p>
-                <a href="php/detail.php?id=<?= $a['id'] ?>">
-                    <?= $a['nama_artikel'] ?>
+                <a href="php/detail.php?id=<?= $b['id'] ?>">
+                    <?= $b['merek'] ?>
                 </a>
             </p>
-
-        <?php endforeach; ?>
-    </div>
+         <?php endforeach; ?>
+    </div>                                            
 </body>
-
 </html>

@@ -1,6 +1,6 @@
 body{
   font-family:arial;
-  background:linear-gradient(to right bottom, khaki, #8081ff, #a6ffb8, #dfff29);
+  background:linear-gradient(to right bottom, rgb(204, 204, 204), #818181, #444444, #242424);
 
 }
 img{
@@ -16,30 +16,19 @@ table {
   font-size : 20px;
   text-align: center;
   border : 5px dashed black;
-  width: 85%;
-}
-.tambah{
-  background-color: teal;
-  color: whitesmoke;
-  font-size: 20px;
-  width: 70px;
-  text-decoration: none;
-}
-.tambah:hover{
-  background-color: red;
-  color: whitesmoke;
+  width: 100%;
 }
 .thead{
-  background-color: #88f7f2;
+  background-color: #eb00009c;
 }
 .title_table{
-  background-color: #ace8bc;
+  background-color: #eb00009c;
 }
 .no{
-  background-color:#ddf59a ;
+  background-color:#ebe4e1;
 }
 .opsi{
-  background-color: peachpuff;
+  background-color: #ebe4e1;
 }
 .ubah button{
   background-color: green;
@@ -49,35 +38,19 @@ table {
   background-color: red;
   color: whitesmoke;
 }
-.display{
-  background-color: #ffe1b0;
+.foto{
+  background-color: #ffffff;
   
 }
-.display img{
+.foto img{
   width: 250px;
   height:250px;
 }
-.merk{
-  background-color: #fcbfa9;
-  color:#ffffff;
+.merek{
+  background-color: #ebe4e1;
+  color:rgb(0, 0, 0);
   font-weight:bold;
 }
-.nama_artikel{
-  background-color: #fac5e6;
-  color:#946500;
-}
-.size_guide{
-  background-color: #ffffff;
-}
-.size_guide img{
-  width: 200px;
-  height:200px;
-}
-.harga{
-  background-color: #f5f387;
-  color:red;
-}
-.stok{
-  background-color: #5ced83;
-  color:yellow;
+.ukuran{
+  background-color: #ebe4e1;
 }

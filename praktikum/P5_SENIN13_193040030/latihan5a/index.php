@@ -4,7 +4,7 @@
     //  Memilih database
     mysqli_select_db($conn, "tubes_193040030") or die("Database Salah!");  
     // query mengambil objek dari tabel dalam database
-    $result = mysqli_query($conn, "SELECT * FROM apparel");
+    $result = mysqli_query($conn, "SELECT * FROM data_baju");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,22 +23,19 @@
        <tr class="title_table">
             <th>NO</th>
             <th>DISPLAY</th>
-            <th>MERK</th>
-            <th>NAMA ARTIKEL</th>
-            <th>SIZE GUIDE</th>
-            <th>HARGA</th>
-            <th>STOK</th>
+            <th>MEREK</th>
+            <th>SIZE</th>
+
        </tr>
        <?php $i=1?>
        <?php while($row = mysqli_fetch_assoc($result)) : ?>
        <tr>
+
             <td class="no"><?= $i ?></td>
             <td class="display"><img src="assets/img/<?= $row['display']; ?>"></td>
-            <td class="merk"><?= $row["merk"]?></td>
-            <td class="nama_artikel"><?= $row["nama_artikel"]?></td>
-            <td class="size_guide"><img src="assets/img/<?= $row['size_guide']; ?>"></td>
-            <td class="harga"><b><?= $row["harga"]?></b></td>
-            <td class="stok"><b><?= $row["stok"]?></b></td>
+            <td class="merek"><?= $row["merk"]?></td>
+            <td class="size"><?= $row['size_guide']?>"></td>
+            
         </tr>
         <?php $i++ ?>
        <?php endwhile; ?>
