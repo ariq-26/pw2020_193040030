@@ -73,7 +73,7 @@ INSERT INTO `mahasiswa` (`id`, `img`, `nrp`, `nama`, `email`, `jurusan`) VALUES
 (1, 'ariq.jpg', '193040030', 'Antasfariq F', '193040030.antasafariq@mail.unpas.ac.id', 'Teknik Informatika'),
 (2, 'alwi.jpg', '193040029', 'Alwi Ramadhan', '193040029.alwi@mail.unpas.ac.id', 'Teknik Informatika'),
 (3, 'agung.jpg', '193040008', 'Agung Gumelar', '193040008.agung@mail.unpas.ac.id', 'Teknik Informatika'),
-(4, 'david.jpg', '193040002', 'David Dalil', '193040002.david@mail.unpas.ac.id', 'Teknik Informatika'),
+(4, 'david.jpg', '193040002', 'David Dalil', '193040002.david@mail.unpas.ac.id\'', 'Teknik Informatika'),
 (5, 'renal.jpg', '193040037', 'Renal Muttaqin', '193040037.renal@mail.unpas.ac.id', 'Teknik Informatika'),
 (6, 'aryogi.jpg', '193040023', 'Aryogi Aziz', '193040023.aryogi@mail.unpas.ac.id', 'Teknik Informatika'),
 (7, 'reza.jpg', '193060005', 'Reza Dwiyana', '193040005.reza@mail.unpas.ac.id', 'Teknik Informatika'),

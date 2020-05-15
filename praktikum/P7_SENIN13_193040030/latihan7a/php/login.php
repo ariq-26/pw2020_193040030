@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     if (mysqli_num_rows($cek_user) > 0) {
         $row = mysqli_fetch_assoc($cek_user);
         if ($password == $row['password']) {
-            $_SESSION['ussername'] = $_POST['username'];
+            $_SESSION['username'] = $_POST['username'];
             $_SESSION['hash'] = $row['id'];
         }
         if ($row['id'] == $_SESSION['hash']) {
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 
 <form action="" method="post">
     <?php if (isset($error)) : ?>
-        <p style="co9lor: red; font-style: italic;">Username or Password Wrong!</p>
+        <p style="color: red; font-style: italic;">Username or Password Wrong!</p>
     <?php endif; ?>
     <table>
         <tr>

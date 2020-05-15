@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
         <label for="remember">Remember Me</label>
     </div>
     <button type="submit" name="submit">Login</button>
-    <div>
+    <div class="registrasi">
         <p>Belum punya akun ? Registrasi <a href="registrasi.php">Disini</a></p>
     </div>
 </form>

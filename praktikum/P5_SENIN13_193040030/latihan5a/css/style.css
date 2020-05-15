@@ -23,35 +23,23 @@ table {
 .no{
     background-color:#ddf59a ;
 }
-.display{
+.img{
     background-color: #ffe1b0;
     
 }
-.display img{
+.img img{
     width: 350px;
     height:350px;
 }
-.merk{
+.merek{
     background-color: #fcbfa9;
     color:#ffffff;
     font-weight:bold;
 }
-.nama_artikel{
-    background-color: #fac5e6;
-    color:#946500;
-}
-.size_guide{
+.ukuran{
     background-color: #ffffff;
 }
-.size_guide img{
+.ukuran img{
     width: 250px;
     height:250px;
-}
-.harga{
-    background-color: #f5f387;
-    color:red;
-}
-.stok{
-    background-color: #5ced83;
-    color:yellow;
 }

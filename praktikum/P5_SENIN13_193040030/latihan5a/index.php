@@ -2,7 +2,7 @@
    //Melakukan koneksi ke database
    $conn = mysqli_connect("localhost", "root", "") or die("Koneksi ke DB gagal");
     //  Memilih database
-    mysqli_select_db($conn, "tubes_193040030") or die("Database Salah!");  
+    mysqli_select_db($conn, "pw_193040030") or die("Database Salah!");  
     // query mengambil objek dari tabel dalam database
     $result = mysqli_query($conn, "SELECT * FROM data_baju");
 ?>
@@ -16,9 +16,9 @@
     <title>Latihan 5a</title>
 </head>
 <body>
-    <table border="1" cellspacing="0" cellpadding="5" width="90%">
+    <table border="1" cellspacing="0" cellpadding="10" width="90%">
             <tr bgcolor="#88f7f2">
-                <th colspan="7" ><h1>Entraight.co Store</h1></th>
+                <th colspan="7" ><h1>Data Baju</h1></th>
             </tr>
        <tr class="title_table">
             <th>NO</th>
@@ -32,9 +32,9 @@
        <tr>
 
             <td class="no"><?= $i ?></td>
-            <td class="display"><img src="assets/img/<?= $row['display']; ?>"></td>
-            <td class="merek"><?= $row["merk"]?></td>
-            <td class="size"><?= $row['size_guide']?>"></td>
+            <td class="img"><img src="assets/img/<?= $row['img']; ?>"></td>
+            <td class="merek"><?= $row["merek"]?></td>
+            <td class="ukuran"><?= $row["ukuran"]?></td>
             
         </tr>
         <?php $i++ ?>

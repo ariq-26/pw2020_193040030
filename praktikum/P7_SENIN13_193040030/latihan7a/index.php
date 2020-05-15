@@ -49,7 +49,7 @@
 </head>
 
 <body>
-    <a href="../login.php">
+    <a href="php/login.php">
         <button type="">Admin</button>
     </a>
     <div class="container">
