@@ -33,12 +33,12 @@ function tambah($data)
   $nrp = htmlspecialchars($data['nrp']);
   $email = htmlspecialchars($data['email']);
   $jurusan = htmlspecialchars($data['jurusan']);
-  $gambar = htmlspecialchars($data['gambar']);
+  $gambar = htmlspecialchars($data['img']);
 
   $query = "INSERT INTO
                 mahasiswa
                 VALUES
-                (null, '$nama', '$nrp', '$email', '$jurusan', '$gambar')";
+                (null, '$nama', '$nrp', '$email', '$jurusan', '$img')";
   mysqli_query($conn, $query)
     or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
@@ -60,14 +60,14 @@ function ubah($data)
   $nrp = htmlspecialchars($data['nrp']);
   $email = htmlspecialchars($data['email']);
   $jurusan = htmlspecialchars($data['jurusan']);
-  $gambar = htmlspecialchars($data['gambar']);
+  $gambar = htmlspecialchars($data['img']);
 
   $query = "UPDATE mahasiswa SET
                 nama = '$nama',
                 nrp = '$nrp',
                 email = '$email',
                 jurusan = '$jurusan',
-                gambar = '$gambar'
+                gambar = '$img'
                 WHERE id = $id";
   mysqli_query($conn, $query)
     or die(mysqli_error($conn));

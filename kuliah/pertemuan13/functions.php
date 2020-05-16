@@ -28,11 +28,11 @@ function query($query)
 
 function upload()
 {
-  $nama_file = $_FILES['gambar']['name'];
-  $tipe_file = $_FILES['gambar']['type'];
-  $ukuran_file = $_FILES['gambar']['size'];
-  $error = $_FILES['gambar']['error'];
-  $tmp_file = $_FILES['gambar']['tmp_name'];
+  $nama_file = $_FILES['img']['name'];
+  $tipe_file = $_FILES['img']['type'];
+  $ukuran_file = $_FILES['img']['size'];
+  $error = $_FILES['img']['error'];
+  $tmp_file = $_FILES['img']['tmp_name'];
 
   if ($error == 4) {
 
@@ -85,7 +85,7 @@ function tambah($data)
   $nrp = htmlspecialchars($data['nrp']);
   $email = htmlspecialchars($data['email']);
   $jurusan = htmlspecialchars($data['jurusan']);
-  // $gambar = htmlspecialchars($data['gambar']);
+  // $img = htmlspecialchars($data['img']);
 
   $query = "INSERT INTO
                 mahasiswa
@@ -102,7 +102,7 @@ function hapus($id)
 
   $mhs = query("SELECT * FROM mahasiswa WHERE id = $id");
   if ($mhs['gambar'] != 'nophoto.jpg') {
-    unlink('img/' . $mhs['gambar']);
+    unlink('img/' . $mhs['img']);
   }
 
   mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id") or die(mysqli_error($conn));
@@ -118,15 +118,15 @@ function ubah($data)
   $nrp = htmlspecialchars($data['nrp']);
   $email = htmlspecialchars($data['email']);
   $jurusan = htmlspecialchars($data['jurusan']);
-  $gambar_lama = htmlspecialchars($data['gambar_lama']);
+  $img_lama = htmlspecialchars($data['img_lama']);
 
   $gambar = upload();
-  if (!$gambar) {
+  if (!$img) {
     return false;
   }
 
-  if ($gambar == 'nophoto.jpg') {
-    $gambar = $gambar_lama;
+  if ($img == 'nophoto.jpg') {
+    $img = $img_lama;
   }
 
 
@@ -135,7 +135,7 @@ function ubah($data)
                 nrp = '$nrp',
                 email = '$email',
                 jurusan = '$jurusan',
-                gambar = '$gambar'
+                gambar = '$img'
                 WHERE id = $id";
   mysqli_query($conn, $query)
     or die(mysqli_error($conn));
